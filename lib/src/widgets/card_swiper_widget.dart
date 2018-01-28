@@ -10,15 +10,18 @@ class CardSwiper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _screenSize = MediaQuery.of(context).size;
+    final men = _screenSize.width * 0.65;
+    final may = _screenSize.width * 0.7;
+
     return Container(
       padding: EdgeInsets.only(top: 15),
       child: new Swiper(
         layout: SwiperLayout.STACK,
-        itemWidth: _screenSize.width * 0.7,
+        itemWidth: _screenSize.width<650? men:may,
         itemHeight: _screenSize.height * 0.5,
         itemBuilder: (BuildContext context, int index) {
           peliculas[index].uniqueId = '${peliculas[index].id}-tarjeta';
-         return ClipRRect(
+          return ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
             child: GestureDetector(
               onTap: () => Navigator.pushNamed(context, 'detalle',

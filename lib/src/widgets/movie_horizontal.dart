@@ -13,11 +13,11 @@ class MovieHorizontal extends StatelessWidget {
         child: PageView(
           pageSnapping: false,
           controller: PageController(initialPage: 1, viewportFraction: 0.3,),
-          children: _tarjetas(context),
+          children: _tarjetas(context,_screenSize),
         ));
   }
 
-  List<Widget> _tarjetas(BuildContext context) {
+  List<Widget> _tarjetas(BuildContext context,Size screenSize) {
     return peliculas.map((i) {
       i.uniqueId = '${ i.id }-poster';
       return GestureDetector(
@@ -37,7 +37,7 @@ class MovieHorizontal extends StatelessWidget {
                     image: AssetImage("assets/img/" + i.imagepath),
                     placeholder: AssetImage('assets/img/no-image.jpg'),
                     fit: BoxFit.cover,
-                    height: 160.0,
+                    height: screenSize.height*0.2,
                   ),
                 ),
               ),

@@ -7,6 +7,7 @@ class PeliculasGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _screenSize = MediaQuery.of(context).size;
     return Scaffold(backgroundColor: Color(0xFF1E1E22),
       appBar: AppBar(shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.vertical(
@@ -51,7 +52,7 @@ class PeliculasGridView extends StatelessWidget {
                                 AssetImage("assets/img/" + p[index].imagepath),
                             placeholder: AssetImage('assets/img/no-image.jpg'),
                             fit: BoxFit.cover,
-                            height: 160.0,
+                            height: _screenSize.height*0.19,
                           ),
                         ),
                       ),
