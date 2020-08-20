@@ -12,7 +12,7 @@ class MovieHorizontal extends StatelessWidget {
         height: _screenSize.height * 0.25,
         child: PageView(
           pageSnapping: false,
-          controller: PageController(initialPage: 1, viewportFraction: 0.3),
+          controller: PageController(initialPage: 1, viewportFraction: 0.3,),
           children: _tarjetas(context),
         ));
   }

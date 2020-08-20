@@ -76,7 +76,7 @@ class PeliculaDetalle extends StatelessWidget {
                   Row(
                     children: <Widget>[
                       Icon(
-                        Icons.calendar_today,
+                        Icons.date_range,
                         size: 18,
                       ),
                       Text(" 12/4/2020"),
@@ -88,7 +88,7 @@ class PeliculaDetalle extends StatelessWidget {
                         Icons.movie_filter,
                         size: 18,
                       ),
-                      Text(" Animado"),
+                      Text(" "+pelicula.subtitle),
                     ],
                   ),
                   Row(

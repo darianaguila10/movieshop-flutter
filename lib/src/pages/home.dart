@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movieshop/src/peliculas.dart';
+import 'package:movieshop/src/search/search_delegate.dart';
 import 'package:movieshop/src/widgets/card_swiper_widget.dart';
 import 'package:movieshop/src/widgets/movie_horizontal.dart';
 
@@ -12,21 +13,23 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("MovieShop"),
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.search), onPressed: () {})
+          IconButton(icon: Icon(Icons.search), onPressed: () {
+            showSearch(context: context, delegate: DataSearch());
+          })
         ],
       ),
       body: Container(
         color: Colors.black87,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[_swipertarjetas(), _footer(context)],
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[Expanded(child: _swipertarjetas(),), _footer(context)],
         ),
       ),
     );
   }
 
   Widget _swipertarjetas() {
-    return CardSwiper(peliculas: getPeliculas2());
+    return CardSwiper(peliculas: getPeliculas());
   }
 
   Widget _footer(BuildContext context) {
