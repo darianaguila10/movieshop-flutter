@@ -9,17 +9,24 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return Scaffold(backgroundColor: Color(0xFF1E1E22),
+      appBar: AppBar( shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(
+        bottom: Radius.circular(25),
+      ),
+    ),
         title: Text("MovieShop"),
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.search), onPressed: () {
+          IconButton(icon: Icon(Icons.view_comfy), onPressed: () {
+           Navigator.pushNamed(context, "gridview");
+          }), IconButton(icon: Icon(Icons.search), onPressed: () {
             showSearch(context: context, delegate: DataSearch());
-          })
+          }),
+          
         ],
       ),
       body: Container(
-        color: Colors.black87,
+        
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[Expanded(child: _swipertarjetas(),), _footer(context)],

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:movieshop/src/pages/home.dart';
 import 'package:movieshop/src/pages/pelicula_detalle.dart';
+import 'package:movieshop/src/pages/peliculas_grid_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (BuildContext context) => HomePage(),
         'detalle': (BuildContext context) => PeliculaDetalle(),
+        'gridview': (BuildContext context) => PeliculasGridView(),
       },
     );
   }

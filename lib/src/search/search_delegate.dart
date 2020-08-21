@@ -47,16 +47,18 @@ class DataSearch extends SearchDelegate {
         itemCount: listaSugerida.length,
         itemBuilder: (context, i) {
           return ListTile(
-            leading: FadeInImage(
-              image: AssetImage("assets/img/" + listaSugerida[i].imagepath),
-              placeholder: AssetImage('assets/img/no-image.jpg'),
-              width: 50.0,
-              fit: BoxFit.contain,
+            leading: ClipRRect(
+            borderRadius: BorderRadius.circular(12.0),
+                          child: FadeInImage(
+                image: AssetImage("assets/img/" + listaSugerida[i].imagepath),
+                placeholder: AssetImage('assets/img/no-image.jpg'),
+                width: 50.0,
+                fit: BoxFit.contain,
+              ),
             ),
             title: Text(listaSugerida[i].title),
-            subtitle: Text(" "+listaSugerida[i].subtitle),
+            subtitle: Text(" " + listaSugerida[i].subtitle),
             onTap: () {
-              
               listaSugerida[i].uniqueId = '';
               Navigator.pushNamed(context, 'detalle',
                   arguments: listaSugerida[i]);
