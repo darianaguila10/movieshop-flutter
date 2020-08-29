@@ -1,5 +1,5 @@
 # movieshop
 
-A new Flutter project.about movie app
+A new Flutter project, about movie app
 
 
